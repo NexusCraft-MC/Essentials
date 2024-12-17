@@ -27,7 +27,7 @@ public class Commandtp extends EssentialsCommand {
             case 1:
                 final User player = getPlayer(server, user, args, 0, false, true);
 
-                if (!player.isTeleportEnabled()) {
+                if (!player.isTeleportEnabled() && !user.isAuthorized("essentials.tp.disabled.bypass")) {
                     throw new TranslatableException("teleportDisabled", player.getDisplayName());
                 }
 
